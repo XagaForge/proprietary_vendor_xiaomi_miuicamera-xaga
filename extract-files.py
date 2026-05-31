@@ -4,6 +4,8 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+import subprocess
+
 from extract_utils.fixups_blob import (
     blob_fixup,
     blob_fixups_user_type,
@@ -26,6 +28,10 @@ def lib_fixup_system_suffix(lib: str, partition: str, *args, **kwargs):
     return f'{lib}_{partition}' if partition == 'system' else None
 
 
+def split_apk(ctx, file, file_path, *args, **kwargs):
+    subprocess.run(['split', '--bytes=20M', '-d', file_path, f'{file_path}.part'], check=True)
+
+
 lib_fixups: lib_fixups_user_type = {
     **lib_fixups,
     'vendor.mediatek.hardware.camera.isphal@1.0': lib_fixup_system_suffix,
@@ -33,7 +39,8 @@ lib_fixups: lib_fixups_user_type = {
 
 blob_fixups: blob_fixups_user_type = {
     'system/priv-app/MiuiCamera/MiuiCamera.apk': blob_fixup()
-        .apktool_patch('miui-camera-patches'),
+        .apktool_patch('miui-camera-patches')
+        .call(split_apk),
     'system/lib64/libdmabufheap.so': blob_fixup()
         .add_needed('libprocessgroup_shim.so'),
     'system/lib64/libcamera_algoup_jni.xiaomi.so': blob_fixup()

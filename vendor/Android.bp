@@ -197,10 +197,25 @@ cc_prebuilt_library_shared {
     prefer: true,
 }
 
+genrule {
+    name: "MiuiCamera_apk",
+    srcs: [
+        "proprietary/system/priv-app/MiuiCamera/MiuiCamera.apk.part00",
+        "proprietary/system/priv-app/MiuiCamera/MiuiCamera.apk.part01",
+        "proprietary/system/priv-app/MiuiCamera/MiuiCamera.apk.part02",
+        "proprietary/system/priv-app/MiuiCamera/MiuiCamera.apk.part03",
+        "proprietary/system/priv-app/MiuiCamera/MiuiCamera.apk.part04",
+        "proprietary/system/priv-app/MiuiCamera/MiuiCamera.apk.part05",
+        "proprietary/system/priv-app/MiuiCamera/MiuiCamera.apk.part06",
+    ],
+    out: ["MiuiCamera.apk"],
+    cmd: "cat $(in) > $(out)",
+}
+
 android_app_import {
     name: "MiuiCamera",
     owner: "xiaomi/miuicamera-xaga",
-    apk: "proprietary/system/priv-app/MiuiCamera/MiuiCamera.apk",
+    apk: ":MiuiCamera_apk",
     overrides: [
         "GoogleCamera",
         "Camera2",
