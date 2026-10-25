@@ -1,0 +1,30 @@
+From d18657ea5c15115bd44aee2bd95faa6971ceb4f0 Mon Sep 17 00:00:00 2001
+From: Arian <arian.kulmer@web.de>
+Date: Tue, 15 Oct 2024 01:44:04 +0200
+Subject: [PATCH 06/13] Open gallery in a new task
+
+Keep the gallery in its own task after a lockscreen launch.
+
+Change-Id: I0859db7390710757d3368bef76ff662f938badbe
+---
+ smali_classes3/com/android/camera/GalleryHelper.smali | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/smali_classes3/com/android/camera/GalleryHelper.smali b/smali_classes3/com/android/camera/GalleryHelper.smali
+index c086200..9c5526d 100644
+--- a/smali_classes3/com/android/camera/GalleryHelper.smali
++++ b/smali_classes3/com/android/camera/GalleryHelper.smali
+@@ -518,6 +518,10 @@
+     .line 3
+     invoke-virtual {p0, v0}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
+ 
++    const v0, 0x10000000
++
++    invoke-virtual {p0, v0}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
++
+     .line 4
+     invoke-virtual {p1, p0}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
+ 
+-- 
+2.53.0
+

@@ -1,7 +1,7 @@
-From 932db72fdbbd8f5901f57d4fe11f68fa865a78d2 Mon Sep 17 00:00:00 2001
+From 08adf44f2cbb59dfaf80a39ff1306d76d0fac34d Mon Sep 17 00:00:00 2001
 From: Arian <arian.kulmer@web.de>
 Date: Fri, 8 Mar 2024 02:11:53 +0100
-Subject: [PATCH 6/8] Support third party galleries
+Subject: [PATCH 04/13] Support third-party galleries
 
 Change-Id: Ia21a9a7172992492a362bb3df6ec2c2bf71cbad3
 ---
@@ -38,5 +38,5 @@ index 76cf418..7ee70a3 100644
  
      const-string p2, "from_MiuiCamera"
 -- 
-2.39.5
+2.53.0
 

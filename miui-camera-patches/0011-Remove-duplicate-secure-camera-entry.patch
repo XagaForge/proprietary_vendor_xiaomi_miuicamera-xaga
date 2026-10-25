@@ -1,0 +1,39 @@
+From 8305de375ccfe773413ce9d827745cd0e64f19d8 Mon Sep 17 00:00:00 2001
+From: ChrisCatto <chriscatto@proton.me>
+Date: Sun, 25 Oct 2026 14:27:38 +0200
+Subject: [PATCH 11/13] Remove duplicate secure camera entry
+
+Assisted-by: LLM
+Change-Id: I69ea573a6dcd08126b74004c70adec6b36343bbd
+Signed-off-by: ChrisCatto <chriscatto@proton.me>
+---
+ AndroidManifest.xml | 6 +-----
+ 1 file changed, 1 insertion(+), 5 deletions(-)
+
+diff --git a/AndroidManifest.xml b/AndroidManifest.xml
+index ec8fd3c..e889d52 100644
+--- a/AndroidManifest.xml
++++ b/AndroidManifest.xml
+@@ -133,6 +133,7 @@
+             <intent-filter>
+                 <action android:name="android.media.action.STILL_IMAGE_CAMERA_SECURE"/>
+                 <category android:name="android.intent.category.DEFAULT"/>
++                <category android:name="android.intent.category.VOICE"/>
+             </intent-filter>
+             <intent-filter>
+                 <action android:name="com.xiaomi.camera.action.VIDEO_CAST"/>
+@@ -172,11 +173,6 @@
+                 <category android:name="android.intent.category.DEFAULT"/>
+                 <category android:name="android.intent.category.VOICE"/>
+             </intent-filter>
+-            <intent-filter>
+-                <action android:name="android.media.action.STILL_IMAGE_CAMERA_SECURE"/>
+-                <category android:name="android.intent.category.DEFAULT"/>
+-                <category android:name="android.intent.category.VOICE"/>
+-            </intent-filter>
+         </activity>
+         <activity android:configChanges="mcc|mnc|keyboardHidden|orientation|screenSize" android:exported="true" android:label="@string/camera_label" android:name="com.android.camera.CameraPreferenceActivity" android:screenOrientation="behind" android:theme="@style/ThemeCameraSettingsMiuiX">
+             <intent-filter android:priority="60">
+-- 
+2.53.0
+

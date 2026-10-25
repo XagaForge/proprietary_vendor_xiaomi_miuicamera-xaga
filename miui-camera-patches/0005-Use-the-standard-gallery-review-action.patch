@@ -1,10 +1,7 @@
-From 89745ac28e95ed9350513792535f714b0f80042f Mon Sep 17 00:00:00 2001
+From cae51c891dbe3ce408de3003722a1172286b86aa Mon Sep 17 00:00:00 2001
 From: Arian <arian.kulmer@web.de>
 Date: Wed, 16 Oct 2024 01:29:58 +0200
-Subject: [PATCH 7/8] Change com.android.camera.action.REVIEW to
- android.provider.action.REVIEW
-
-This is the standard intent for review actions
+Subject: [PATCH 05/13] Use the standard gallery review action
 
 Change-Id: Ic5abe3c77a62ba12b387a47aaecbe924f71ab0b3
 ---
@@ -48,5 +45,5 @@ index 431ec94..b5354c3 100644
  .field public static final REVIEW_ACTION_IN_MULTI_WINDOW:Ljava/lang/String; = "com.android.camera.action.SPILIT_SCREEN_REVIEW"
  
 -- 
-2.39.5
+2.53.0
 

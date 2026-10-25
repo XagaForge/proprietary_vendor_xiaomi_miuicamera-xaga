@@ -1,7 +1,7 @@
-From cf98d29e873a45a4c83a64192aff0f1f106fb547 Mon Sep 17 00:00:00 2001
+From 9cd16c95b07df0bfb486ecd974f27c65ad14f70e Mon Sep 17 00:00:00 2001
 From: Alexander Winkowski <dereference23@outlook.com>
 Date: Thu, 18 Apr 2024 11:52:30 +0200
-Subject: [PATCH 5/8] AndroidManifest.xml: Revert to `ic_launcher_camera` icon
+Subject: [PATCH 08/13] Restore ic_launcher_camera
 
 Change-Id: Icd75f081fffa170171f3ae24687c79118e4d6603
 ---
@@ -9,10 +9,10 @@ Change-Id: Icd75f081fffa170171f3ae24687c79118e4d6603
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/AndroidManifest.xml b/AndroidManifest.xml
-index ee2c9a0..0654403 100644
+index 1ad1cb6..ec8fd3c 100644
 --- a/AndroidManifest.xml
 +++ b/AndroidManifest.xml
-@@ -77,7 +77,7 @@
+@@ -78,7 +78,7 @@
          <package android:name="com.miui.gallery"/>
          <package android:name="com.xiaomi.wearable"/>
      </queries>
@@ -22,5 +22,5 @@ index ee2c9a0..0654403 100644
          <meta-data android:name="miui.supportRequiredModifiable" android:value="true"/>
          <meta-data android:name="com.miui.bugreport.LOG_DIR" android:resource="@xml/log_paths"/>
 -- 
-2.39.5
+2.53.0
 
